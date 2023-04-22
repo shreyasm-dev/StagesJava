@@ -17,6 +17,10 @@ public class Application extends javafx.application.Application {
     Scene scene = new Scene(fxmlLoader.load(), 700, 500);
     stage.setTitle("Stages");
     stage.setScene(scene);
+
+    // Make the title bar look normal on macOS instead of slightly lighter
+    stage.getScene().setFill(null);
+
     stage.show();
   }
 
