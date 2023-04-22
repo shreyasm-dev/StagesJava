@@ -8,6 +8,7 @@ import java.io.IOException;
 
 // Other than JavaFX and core Java, this project uses the following libraries:
 // - ValidatorFX
+// - FormsFX
 
 public class Application extends javafx.application.Application {
   @Override
