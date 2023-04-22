@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -9,8 +10,51 @@
     <tabs>
       <Tab text="Single-stage">
         <content>
-          <VBox>
-            <Label text="Hello World!"/>
+          <VBox spacing="20.0">
+            <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+
+            <VBox>
+              <Label text="Specific impulse (s)"/>
+              <TextField
+                fx:id="specificImpulse"
+                onKeyTyped="#valueChanged"
+                text="450"
+              />
+            </VBox>
+
+            <VBox>
+              <Label text="Propellant mass (kg)"/>
+              <TextField
+                fx:id="propellantMass"
+                onKeyTyped="#valueChanged"
+                text="100000"
+              />
+            </VBox>
+
+            <VBox>
+              <Label text="Structural mass (kg)"/>
+              <TextField
+                fx:id="structuralMass"
+                onKeyTyped="#valueChanged"
+                text="10000"
+              />
+            </VBox>
+
+            <VBox>
+              <Label text="Payload mass (kg)"/>
+              <TextField
+                fx:id="payloadMass"
+                onKeyTyped="#valueChanged"
+                text="5000"
+              />
+            </VBox>
+
+            <VBox>
+              <Label text="ΔV (m/s)"/>
+              <Label fx:id="deltaV"/>
+            </VBox>
           </VBox>
         </content>
       </Tab>

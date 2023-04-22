@@ -6,6 +6,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+// Other than JavaFX and core Java, this project uses the following libraries:
+// - ValidatorFX
+
 public class Application extends javafx.application.Application {
   @Override
   public void start(Stage stage) throws IOException {

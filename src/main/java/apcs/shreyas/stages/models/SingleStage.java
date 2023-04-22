@@ -28,6 +28,9 @@ public class SingleStage extends Rocket {
   }
 
   public double getDeltaV() {
+    System.out.println(this.stage.getExhaustVelocity());
+    System.out.println(this.getInitialMass());
+    System.out.println(this.getFinalMass());
     return this.stage.getExhaustVelocity() * Math.log(this.getInitialMass() / this.getFinalMass());
   }
 }
