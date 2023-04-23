@@ -4,8 +4,8 @@ public class SingleStage extends Rocket {
   private Stage stage;
 
   public SingleStage(Stage stage, double payloadMass) {
+    super(payloadMass);
     this.stage = stage;
-    this.payloadMass = payloadMass;
   }
 
   public Stage getStage() {
