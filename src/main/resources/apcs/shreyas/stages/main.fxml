@@ -15,7 +15,7 @@
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
             </padding>
 
-            <VBox>
+            <VBox spacing="5.0">
               <Label text="Specific impulse (s)"/>
               <TextField
                 fx:id="specificImpulse"
@@ -24,7 +24,7 @@
               />
             </VBox>
 
-            <VBox>
+            <VBox spacing="5.0">
               <Label text="Propellant mass (kg)"/>
               <TextField
                 fx:id="propellantMass"
@@ -33,7 +33,7 @@
               />
             </VBox>
 
-            <VBox>
+            <VBox spacing="5.0">
               <Label text="Structural mass (kg)"/>
               <TextField
                 fx:id="structuralMass"
@@ -42,7 +42,7 @@
               />
             </VBox>
 
-            <VBox>
+            <VBox spacing="5.0">
               <Label text="Payload mass (kg)"/>
               <TextField
                 fx:id="payloadMass"
@@ -51,7 +51,7 @@
               />
             </VBox>
 
-            <VBox>
+            <VBox spacing="5.0">
               <Label text="ΔV (m/s)"/>
               <Label fx:id="deltaV"/>
             </VBox>
