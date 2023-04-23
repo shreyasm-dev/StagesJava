@@ -1,5 +1,7 @@
 package apcs.shreyas.stages.models;
 
+import javafx.scene.layout.VBox;
+
 public class Stage {
   private double specificImpulse;
   private double propellantMass;

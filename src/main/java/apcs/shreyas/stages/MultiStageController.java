@@ -45,74 +45,25 @@ public class MultiStageController implements Initializable {
     List<Stage> stages = this.rocket.getStages();
 
     for (int i = 0; i < stages.size(); i++) {
-      Stage stage = stages.get(i);
-      VBox stageBox = new VBox();
-
-      stageBox.setSpacing(10);
-      stageBox.getChildren().add(new Label("Stage " + (i + 1)));
-
-      Button removeButton = new Button("Remove");
-      int x = i;
-      removeButton.setOnAction(event -> {
-        this.rocket.removeStage(x);
-        this.updateList();
-        this.updateDeltaV();
-      });
-
-      TextField specificImpulse = new TextField(String.valueOf(stage.getSpecificImpulse()));
-      validator.createCheck().dependsOn("specificImpulse", specificImpulse.textProperty()).withMethod(c -> {
-        try {
-          double value = Double.parseDouble(c.get("specificImpulse"));
-          if (value <= 0) {
-            c.error("Must be greater than 0");
+      int finalI = i;
+      this.stageList.getChildren().add(Utility.stageToFXView(
+        stages.get(i),
+        i,
+        validator,
+        x -> {
+          this.rocket.removeStage(finalI);
+          this.updateList();
+          this.updateDeltaV();
+          return null;
+        },
+        x -> {
+          if (validator.validate()) {
+            this.updateDeltaV();
           }
-        } catch (NumberFormatException e) {
-          c.error("Must be a number");
+
+          return null;
         }
-      }).decorates(specificImpulse).immediate();
-      specificImpulse.textProperty().addListener((observable, oldValue, newValue) -> {
-        stage.setSpecificImpulse(Double.parseDouble(newValue));
-        this.updateDeltaV();
-      });
-
-      TextField propellantMass = new TextField(String.valueOf(stage.getPropellantMass()));
-      validator.createCheck().dependsOn("propellantMass", propellantMass.textProperty()).withMethod(c -> {
-        try {
-          double value = Double.parseDouble(c.get("propellantMass"));
-          if (value <= 0) {
-            c.error("Must be greater than 0");
-          }
-        } catch (NumberFormatException e) {
-          c.error("Must be a number");
-        }
-      }).decorates(propellantMass).immediate();
-      propellantMass.textProperty().addListener((observable, oldValue, newValue) -> {
-        stage.setPropellantMass(Double.parseDouble(newValue));
-        this.updateDeltaV();
-      });
-
-      TextField structuralMass = new TextField(String.valueOf(stage.getStructuralMass()));
-      validator.createCheck().dependsOn("structuralMass", structuralMass.textProperty()).withMethod(c -> {
-        try {
-          double value = Double.parseDouble(c.get("structuralMass"));
-          if (value <= 0) {
-            c.error("Must be greater than 0");
-          }
-        } catch (NumberFormatException e) {
-          c.error("Must be a number");
-        }
-      }).decorates(structuralMass).immediate();
-      structuralMass.textProperty().addListener((observable, oldValue, newValue) -> {
-        stage.setStructuralMass(Double.parseDouble(newValue));
-        this.updateDeltaV();
-      });
-
-      stageBox.getChildren().add(removeButton);
-      stageBox.getChildren().add(specificImpulse);
-      stageBox.getChildren().add(propellantMass);
-      stageBox.getChildren().add(structuralMass);
-
-      this.stageList.getChildren().add(stageBox);
+      ));
     }
   }
 
