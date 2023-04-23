@@ -6,6 +6,11 @@ import java.util.List;
 public class MultiStage extends Rocket {
   private List<Stage> stages;
 
+  public MultiStage(double payloadMass) {
+    super(payloadMass);
+    this.stages = new ArrayList<>();
+  }
+
   public List<Stage> getStages() {
     return this.stages;
   }
