@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apcs.shreyas.stages.SingleStageController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+
+  <VBox spacing="5.0">
+    <Label text="Specific impulse (s)" />
+    <TextField fx:id="specificImpulse" onKeyTyped="#valueChanged" text="450" />
+  </VBox>
+
+  <VBox spacing="5.0">
+    <Label text="Propellant mass (kg)" />
+    <TextField fx:id="propellantMass" onKeyTyped="#valueChanged" text="100000" />
+  </VBox>
+
+  <VBox spacing="5.0">
+    <Label text="Structural mass (kg)" />
+    <TextField fx:id="structuralMass" onKeyTyped="#valueChanged" text="10000" />
+  </VBox>
+
+  <VBox spacing="5.0">
+    <Label text="Payload mass (kg)" />
+    <TextField fx:id="payloadMass" onKeyTyped="#valueChanged" text="5000" />
+  </VBox>
+
+  <VBox spacing="5.0">
+    <Label text="ΔV (m/s)" />
+    <Label fx:id="deltaV" />
+  </VBox>
+</VBox>

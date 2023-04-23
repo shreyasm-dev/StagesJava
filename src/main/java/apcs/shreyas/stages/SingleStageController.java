@@ -11,7 +11,7 @@ import net.synedra.validatorfx.Validator;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class SingleStageController implements Initializable {
   @FXML
   private TextField specificImpulse;
 
