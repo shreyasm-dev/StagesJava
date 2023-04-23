@@ -81,6 +81,13 @@ public class MultiStageController implements Initializable {
     this.updateDeltaV();
   }
 
+  @FXML
+  private void addStage() {
+    this.rocket.addStage(new Stage(450, 50000, 5000));
+    this.updateList();
+    this.updateDeltaV();
+  }
+
   private void updateDeltaV() {
     if (validator.validate()) {
       this.deltaV.setText(String.valueOf(this.rocket.getDeltaV()));
