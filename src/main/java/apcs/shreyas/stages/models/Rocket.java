@@ -1,7 +1,7 @@
 package apcs.shreyas.stages.models;
 
 abstract public class Rocket {
-  private double payloadMass;
+  protected double payloadMass;
 
   public double getPayloadMass() {
     return this.payloadMass;

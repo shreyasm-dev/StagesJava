@@ -2,7 +2,6 @@ package apcs.shreyas.stages.models;
 
 public class SingleStage extends Rocket {
   private Stage stage;
-  private double payloadMass;
 
   public SingleStage(Stage stage, double payloadMass) {
     this.stage = stage;
