@@ -36,6 +36,17 @@ public class MultiStageController implements Initializable {
     this.rocket.addStage(new Stage(450, 50000, 5000));
     this.rocket.addStage(new Stage(450, 50000, 5000));
 
+    this.validator.createCheck().dependsOn("payloadMass", this.payloadMass.textProperty()).withMethod(c -> {
+      try {
+        double value = Double.parseDouble(c.get("payloadMass"));
+        if (value < 0) {
+          c.error("Must be greater than or equal to 0");
+        }
+      } catch (NumberFormatException e) {
+        c.error("Must be a number");
+      }
+    }).decorates(payloadMass).immediate();
+
     this.updateList();
     this.updateDeltaV();
   }
@@ -57,10 +68,7 @@ public class MultiStageController implements Initializable {
           return null;
         },
         x -> {
-          if (validator.validate()) {
-            this.updateDeltaV();
-          }
-
+          this.updateDeltaV();
           return null;
         }
       ));
@@ -74,6 +82,8 @@ public class MultiStageController implements Initializable {
   }
 
   private void updateDeltaV() {
-    this.deltaV.setText(String.valueOf(this.rocket.getDeltaV()));
+    if (validator.validate()) {
+      this.deltaV.setText(String.valueOf(this.rocket.getDeltaV()));
+    }
   }
 }

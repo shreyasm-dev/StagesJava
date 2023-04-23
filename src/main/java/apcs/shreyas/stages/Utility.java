@@ -10,6 +10,24 @@ import net.synedra.validatorfx.Validator;
 import java.util.function.Function;
 
 public class Utility {
+  public static VBox labeledTextField(String label) {
+    VBox box = new VBox();
+    box.setSpacing(5);
+    box.getChildren().add(new Label(label));
+    box.getChildren().add(new TextField());
+
+    return box;
+  }
+
+  public static VBox labeledTextField(String label, TextField field) {
+    VBox box = new VBox();
+    box.setSpacing(5);
+    box.getChildren().add(new Label(label));
+    box.getChildren().add(field);
+
+    return box;
+  }
+
   public static VBox stageToFXView(Stage stage, int i, Validator validator, Function<Void, Void> removeCallback, Function<Void, Void> updateCallback) {
     VBox stageBox = new VBox();
 
@@ -68,9 +86,9 @@ public class Utility {
     });
 
     stageBox.getChildren().add(removeButton);
-    stageBox.getChildren().add(specificImpulse);
-    stageBox.getChildren().add(propellantMass);
-    stageBox.getChildren().add(structuralMass);
+    stageBox.getChildren().add(Utility.labeledTextField("Specific impulse (s)", specificImpulse));
+    stageBox.getChildren().add(Utility.labeledTextField("Propellant mass (kg)", propellantMass));
+    stageBox.getChildren().add(Utility.labeledTextField("Structural mass (kg)", structuralMass));
 
     return stageBox;
   }
