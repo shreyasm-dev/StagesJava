@@ -10,6 +10,14 @@
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
   </padding>
 
+  <ScrollPane fitToWidth="true" fitToHeight="true">
+    <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <VBox spacing="20.0" fx:id="stageList"></VBox>
+  </ScrollPane>
+
   <VBox spacing="5.0">
     <Label text="Payload Mass (kg)"/>
     <TextField fx:id="payloadMass" onKeyTyped="#payloadMassChanged" text="5000"/>
@@ -19,12 +27,4 @@
     <Label text="ΔV (m/s)"/>
     <Label fx:id="deltaV"/>
   </VBox>
-
-  <ScrollPane fitToWidth="true" fitToHeight="true">
-    <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <VBox spacing="20.0" fx:id="stageList"></VBox>
-  </ScrollPane>
 </VBox>

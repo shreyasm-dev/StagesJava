@@ -12,22 +12,22 @@
 
   <VBox spacing="5.0">
     <Label text="Specific impulse (s)"/>
-    <TextField fx:id="specificImpulse" onKeyTyped="#valueChanged" text="450"/>
+    <TextField fx:id="specificImpulse" onKeyTyped="#valueChanged" text="450.0"/>
   </VBox>
 
   <VBox spacing="5.0">
     <Label text="Propellant mass (kg)"/>
-    <TextField fx:id="propellantMass" onKeyTyped="#valueChanged" text="100000"/>
+    <TextField fx:id="propellantMass" onKeyTyped="#valueChanged" text="100000.0"/>
   </VBox>
 
   <VBox spacing="5.0">
     <Label text="Structural mass (kg)"/>
-    <TextField fx:id="structuralMass" onKeyTyped="#valueChanged" text="10000"/>
+    <TextField fx:id="structuralMass" onKeyTyped="#valueChanged" text="10000.0"/>
   </VBox>
 
   <VBox spacing="5.0">
     <Label text="Payload mass (kg)"/>
-    <TextField fx:id="payloadMass" onKeyTyped="#valueChanged" text="5000"/>
+    <TextField fx:id="payloadMass" onKeyTyped="#valueChanged" text="5000.0"/>
   </VBox>
 
   <VBox spacing="5.0">

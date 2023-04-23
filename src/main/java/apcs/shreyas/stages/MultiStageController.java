@@ -16,13 +16,13 @@ import java.util.ResourceBundle;
 
 public class MultiStageController implements Initializable {
   @FXML
+  private VBox stageList;
+
+  @FXML
   private TextField payloadMass;
 
   @FXML
   private Label deltaV;
-
-  @FXML
-  private VBox stageList;
 
   private Validator validator;
 
