@@ -91,7 +91,7 @@ public class SingleStageController implements Initializable {
   }
 
   @FXML
-  protected void valueChanged() {
+  private void valueChanged() {
     if (this.validator.validate()) {
       this.rocket.getStage().setSpecificImpulse(Double.parseDouble(this.specificImpulse.getText()));
       this.rocket.getStage().setPropellantMass(Double.parseDouble(this.propellantMass.getText()));

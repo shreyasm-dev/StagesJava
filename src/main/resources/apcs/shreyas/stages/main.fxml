@@ -13,9 +13,7 @@
       </Tab>
       <Tab text="Multi-stage">
         <content>
-          <VBox>
-            <Label text="Goodbye World!"/>
-          </VBox>
+          <fx:include source="multi-stage.fxml"/>
         </content>
       </Tab>
     </tabs>
