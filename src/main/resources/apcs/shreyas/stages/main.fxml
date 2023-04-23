@@ -8,13 +8,13 @@
     <tabs>
       <Tab text="Single-stage">
         <content>
-          <fx:include source="single-stage.fxml" />
+          <fx:include source="single-stage.fxml"/>
         </content>
       </Tab>
       <Tab text="Multi-stage">
         <content>
           <VBox>
-            <Label text="Goodbye World!" />
+            <Label text="Goodbye World!"/>
           </VBox>
         </content>
       </Tab>
