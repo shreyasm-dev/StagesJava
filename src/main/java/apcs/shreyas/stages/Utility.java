@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 import net.synedra.validatorfx.Validator;
 
 import java.util.function.Function;
@@ -32,7 +33,15 @@ public class Utility {
     VBox stageBox = new VBox();
 
     stageBox.setSpacing(10);
-    stageBox.getChildren().add(new Label("Stage " + (i + 1)));
+
+    Label stageLabel = new Label("Stage " + (i + 1));
+    stageLabel.setStyle("-fx-font-size: 16px");
+
+    // create a small icon to help distinguish stages easily
+    // https://stackoverflow.com/questions/1961146/memory-address-of-variables-in-java
+    Rectangle icon = new Rectangle(4, 16);
+    icon.setStyle("-fx-fill: #" + Integer.toHexString(stage.hashCode()).substring(0, 6));
+    stageLabel.setGraphic(icon);
 
     Button removeButton = new Button("Remove");
     removeButton.setOnAction(e -> removeCallback.apply(null));
@@ -85,6 +94,7 @@ public class Utility {
       updateCallback.apply(null);
     });
 
+    stageBox.getChildren().add(stageLabel);
     stageBox.getChildren().add(removeButton);
     stageBox.getChildren().add(Utility.labeledTextField("Specific impulse (s)", specificImpulse));
     stageBox.getChildren().add(Utility.labeledTextField("Propellant mass (kg)", propellantMass));
