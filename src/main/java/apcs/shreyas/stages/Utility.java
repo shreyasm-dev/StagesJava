@@ -38,7 +38,7 @@ public class Utility {
     Label stageLabel = new Label("Stage " + (i + 1));
     stageLabel.setStyle("-fx-font-size: 16px");
 
-    // create a small icon to help distinguish stages easily
+    // Create a small icon to help distinguish stages easily
     // https://stackoverflow.com/questions/1961146/memory-address-of-variables-in-java
     Rectangle icon = new Rectangle(4, 16);
     icon.setStyle("-fx-fill: #" + Integer.toHexString(stage.hashCode()).substring(0, 6));
