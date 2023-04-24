@@ -1,5 +1,6 @@
 package apcs.shreyas.stages;
 
+import apcs.shreyas.stages.controllers.components.ValidatedDoubleField;
 import apcs.shreyas.stages.models.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,14 +21,14 @@ public class Utility {
     return box;
   }
 
-  public static VBox labeledTextField(String label, TextField field) {
+  /* public static VBox labeledTextField(String label, TextField field) {
     VBox box = new VBox();
     box.setSpacing(5);
     box.getChildren().add(new Label(label));
     box.getChildren().add(field);
 
     return box;
-  }
+  } */
 
   public static VBox stageToFXView(Stage stage, int i, Validator validator, Function<Void, Void> removeCallback, Function<Void, Void> updateCallback) {
     VBox stageBox = new VBox();
@@ -46,49 +47,31 @@ public class Utility {
     Button removeButton = new Button("Remove");
     removeButton.setOnAction(e -> removeCallback.apply(null));
 
-    TextField specificImpulse = new TextField(String.valueOf(stage.getSpecificImpulse()));
-    validator.createCheck().dependsOn("specificImpulse", specificImpulse.textProperty()).withMethod(c -> {
-      try {
-        double value = Double.parseDouble(c.get("specificImpulse"));
-        if (value <= 0) {
-          c.error("Must be greater than 0");
-        }
-      } catch (NumberFormatException e) {
-        c.error("Must be a number");
-      }
-    }).decorates(specificImpulse).immediate();
+    ValidatedDoubleField specificImpulse = new ValidatedDoubleField(
+      "Specific impulse (s)",
+      String.valueOf(stage.getSpecificImpulse()),
+      validator
+    );
     specificImpulse.textProperty().addListener((observable, oldValue, newValue) -> {
       stage.setSpecificImpulse(Double.parseDouble(newValue));
       updateCallback.apply(null);
     });
 
-    TextField propellantMass = new TextField(String.valueOf(stage.getPropellantMass()));
-    validator.createCheck().dependsOn("propellantMass", propellantMass.textProperty()).withMethod(c -> {
-      try {
-        double value = Double.parseDouble(c.get("propellantMass"));
-        if (value <= 0) {
-          c.error("Must be greater than 0");
-        }
-      } catch (NumberFormatException e) {
-        c.error("Must be a number");
-      }
-    }).decorates(propellantMass).immediate();
+    ValidatedDoubleField propellantMass = new ValidatedDoubleField(
+      "Propellant mass (kg)",
+      String.valueOf(stage.getPropellantMass()),
+      validator
+    );
     propellantMass.textProperty().addListener((observable, oldValue, newValue) -> {
       stage.setPropellantMass(Double.parseDouble(newValue));
       updateCallback.apply(null);
     });
 
-    TextField structuralMass = new TextField(String.valueOf(stage.getStructuralMass()));
-    validator.createCheck().dependsOn("structuralMass", structuralMass.textProperty()).withMethod(c -> {
-      try {
-        double value = Double.parseDouble(c.get("structuralMass"));
-        if (value <= 0) {
-          c.error("Must be greater than 0");
-        }
-      } catch (NumberFormatException e) {
-        c.error("Must be a number");
-      }
-    }).decorates(structuralMass).immediate();
+    ValidatedDoubleField structuralMass = new ValidatedDoubleField(
+      "Structural mass (kg)",
+      String.valueOf(stage.getStructuralMass()),
+      validator
+    );
     structuralMass.textProperty().addListener((observable, oldValue, newValue) -> {
       stage.setStructuralMass(Double.parseDouble(newValue));
       updateCallback.apply(null);
@@ -96,9 +79,9 @@ public class Utility {
 
     stageBox.getChildren().add(stageLabel);
     stageBox.getChildren().add(removeButton);
-    stageBox.getChildren().add(Utility.labeledTextField("Specific impulse (s)", specificImpulse));
-    stageBox.getChildren().add(Utility.labeledTextField("Propellant mass (kg)", propellantMass));
-    stageBox.getChildren().add(Utility.labeledTextField("Structural mass (kg)", structuralMass));
+    stageBox.getChildren().add(specificImpulse);
+    stageBox.getChildren().add(propellantMass);
+    stageBox.getChildren().add(structuralMass);
 
     return stageBox;
   }
