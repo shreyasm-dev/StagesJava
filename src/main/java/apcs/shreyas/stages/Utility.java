@@ -50,7 +50,8 @@ public class Utility {
     ValidatedDoubleField specificImpulse = new ValidatedDoubleField(
       "Specific impulse (s)",
       String.valueOf(stage.getSpecificImpulse()),
-      validator
+      validator,
+      Providers.SPECIFIC_IMPULSE
     );
     specificImpulse.textProperty().addListener((observable, oldValue, newValue) -> {
       stage.setSpecificImpulse(Double.parseDouble(newValue));
@@ -60,7 +61,8 @@ public class Utility {
     ValidatedDoubleField propellantMass = new ValidatedDoubleField(
       "Propellant mass (kg)",
       String.valueOf(stage.getPropellantMass()),
-      validator
+      validator,
+      null
     );
     propellantMass.textProperty().addListener((observable, oldValue, newValue) -> {
       stage.setPropellantMass(Double.parseDouble(newValue));
@@ -70,7 +72,8 @@ public class Utility {
     ValidatedDoubleField structuralMass = new ValidatedDoubleField(
       "Structural mass (kg)",
       String.valueOf(stage.getStructuralMass()),
-      validator
+      validator,
+      null
     );
     structuralMass.textProperty().addListener((observable, oldValue, newValue) -> {
       stage.setStructuralMass(Double.parseDouble(newValue));

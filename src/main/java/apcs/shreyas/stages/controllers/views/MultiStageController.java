@@ -1,5 +1,6 @@
 package apcs.shreyas.stages.controllers.views;
 
+import apcs.shreyas.stages.Providers;
 import apcs.shreyas.stages.Utility;
 import apcs.shreyas.stages.controllers.components.ValidatedDoubleField;
 import apcs.shreyas.stages.models.MultiStage;
@@ -35,7 +36,7 @@ public class MultiStageController implements Initializable {
   public void initialize(URL location, ResourceBundle resources) {
     this.validator = new Validator();
 
-    this.payloadMass = new ValidatedDoubleField("Payload mass (kg)", "5000.0", this.validator, 0, true);
+    this.payloadMass = new ValidatedDoubleField("Payload mass (kg)", "5000.0", this.validator, null, 0, true);
     this.payloadMass.setEventHandler(e -> this.payloadMassChanged());
 
     this.payloadMassRoot.getChildren().add(this.payloadMass);
