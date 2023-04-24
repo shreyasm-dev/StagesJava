@@ -12,7 +12,7 @@ import net.synedra.validatorfx.Validator;
 import java.util.function.Function;
 
 public class Utility {
-  public static VBox labeledTextField(String label) {
+  /* public static VBox labeledTextField(String label) {
     VBox box = new VBox();
     box.setSpacing(5);
     box.getChildren().add(new Label(label));
@@ -21,7 +21,7 @@ public class Utility {
     return box;
   }
 
-  /* public static VBox labeledTextField(String label, TextField field) {
+  public static VBox labeledTextField(String label, TextField field) {
     VBox box = new VBox();
     box.setSpacing(5);
     box.getChildren().add(new Label(label));
