@@ -1,11 +1,12 @@
 package apcs.shreyas.stages.controllers.views;
 
+import apcs.shreyas.stages.controllers.components.ValidatedDoubleField;
 import apcs.shreyas.stages.models.SingleStage;
 import apcs.shreyas.stages.models.Stage;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import net.synedra.validatorfx.Validator;
 
 import java.net.URL;
@@ -13,16 +14,15 @@ import java.util.ResourceBundle;
 
 public class SingleStageController implements Initializable {
   @FXML
-  private TextField specificImpulse;
+  private VBox fieldRoot;
 
-  @FXML
-  private TextField propellantMass;
+  private ValidatedDoubleField specificImpulse;
 
-  @FXML
-  private TextField structuralMass;
+  private ValidatedDoubleField propellantMass;
 
-  @FXML
-  private TextField payloadMass;
+  private ValidatedDoubleField structuralMass;
+
+  private ValidatedDoubleField payloadMass;
 
   @FXML
   private Label deltaV;
@@ -34,6 +34,24 @@ public class SingleStageController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     this.validator = new Validator();
+
+    this.specificImpulse = new ValidatedDoubleField("Specific impulse (s)", "450.0", this.validator);
+    this.propellantMass = new ValidatedDoubleField("Propellant mass (kg)", "100000.0", this.validator);
+    this.structuralMass = new ValidatedDoubleField("Structural mass (kg)", "10000.0", this.validator);
+    this.payloadMass = new ValidatedDoubleField("Payload mass (kg)", "5000.0", this.validator, 0, true);
+
+    this.specificImpulse.setEventHandler(e -> this.valueChanged());
+    this.propellantMass.setEventHandler(e -> this.valueChanged());
+    this.structuralMass.setEventHandler(e -> this.valueChanged());
+    this.payloadMass.setEventHandler(e -> this.valueChanged());
+
+    this.fieldRoot.getChildren().addAll(
+      this.specificImpulse,
+      this.propellantMass,
+      this.structuralMass,
+      this.payloadMass
+    );
+
     this.rocket = new SingleStage(
       new Stage(
         Double.parseDouble(this.specificImpulse.getText()),
@@ -42,50 +60,6 @@ public class SingleStageController implements Initializable {
       ),
       Double.parseDouble(this.payloadMass.getText())
     );
-
-    this.validator.createCheck().dependsOn("specificImpulse", this.specificImpulse.textProperty()).withMethod(c -> {
-      try {
-        double value = Double.parseDouble(c.get("specificImpulse"));
-        if (value <= 0) {
-          c.error("Must be greater than 0");
-        }
-      } catch (NumberFormatException e) {
-        c.error("Must be a number");
-      }
-    }).decorates(specificImpulse).immediate();
-
-    this.validator.createCheck().dependsOn("propellantMass", this.propellantMass.textProperty()).withMethod(c -> {
-      try {
-        double value = Double.parseDouble(c.get("propellantMass"));
-        if (value <= 0) {
-          c.error("Must be greater than 0");
-        }
-      } catch (NumberFormatException e) {
-        c.error("Must be a number");
-      }
-    }).decorates(propellantMass).immediate();
-
-    this.validator.createCheck().dependsOn("structuralMass", this.structuralMass.textProperty()).withMethod(c -> {
-      try {
-        double value = Double.parseDouble(c.get("structuralMass"));
-        if (value <= 0) {
-          c.error("Must be greater than 0");
-        }
-      } catch (NumberFormatException e) {
-        c.error("Must be a number");
-      }
-    }).decorates(structuralMass).immediate();
-
-    this.validator.createCheck().dependsOn("payloadMass", this.payloadMass.textProperty()).withMethod(c -> {
-      try {
-        double value = Double.parseDouble(c.get("payloadMass"));
-        if (value < 0) {
-          c.error("Must be greater than or equal to 0");
-        }
-      } catch (NumberFormatException e) {
-        c.error("Must be a number");
-      }
-    }).decorates(payloadMass).immediate();
 
     this.valueChanged();
   }

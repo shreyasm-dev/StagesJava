@@ -1,6 +1,7 @@
 package apcs.shreyas.stages.controllers.components;
 
 import javafx.beans.property.StringProperty;
+import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -48,5 +49,9 @@ public class ValidatedDoubleField extends VBox {
 
   public StringProperty textProperty() {
     return this.field.textProperty();
+  }
+
+  public void setEventHandler(EventHandler action) {
+    this.field.addEventHandler(javafx.scene.input.KeyEvent.KEY_RELEASED, action);
   }
 }
