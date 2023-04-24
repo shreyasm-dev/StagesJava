@@ -1,13 +1,12 @@
 package apcs.shreyas.stages.controllers.views;
 
 import apcs.shreyas.stages.Utility;
+import apcs.shreyas.stages.controllers.components.ValidatedDoubleField;
 import apcs.shreyas.stages.models.MultiStage;
 import apcs.shreyas.stages.models.Stage;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import net.synedra.validatorfx.Validator;
 
@@ -20,7 +19,9 @@ public class MultiStageController implements Initializable {
   private VBox stageList;
 
   @FXML
-  private TextField payloadMass;
+  private VBox payloadMassRoot;
+
+  private ValidatedDoubleField payloadMass;
 
   @FXML
   private Label deltaV;
@@ -33,6 +34,12 @@ public class MultiStageController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     this.validator = new Validator();
+
+    this.payloadMass = new ValidatedDoubleField("Payload mass (kg)", "5000.0", this.validator, 0, true);
+    this.payloadMass.setEventHandler(e -> this.payloadMassChanged());
+
+    this.payloadMassRoot.getChildren().add(this.payloadMass);
+
     this.rocket = new MultiStage(Double.parseDouble(this.payloadMass.getText()));
     this.rocket.addStage(new Stage(450, 50000, 5000));
     this.rocket.addStage(new Stage(450, 50000, 5000));

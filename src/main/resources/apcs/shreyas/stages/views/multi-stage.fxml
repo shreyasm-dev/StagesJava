@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.Group?>
 <VBox spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="apcs.shreyas.stages.controllers.views.MultiStageController">
   <padding>
@@ -20,10 +21,7 @@
     <VBox spacing="20.0" fx:id="stageList"></VBox>
   </ScrollPane>
 
-  <VBox spacing="5.0">
-    <Label text="Payload mass (kg)"/>
-    <TextField fx:id="payloadMass" onKeyTyped="#payloadMassChanged" text="5000.0"/>
-  </VBox>
+  <VBox fx:id="payloadMassRoot"></VBox>
 
   <VBox spacing="5.0">
     <Label text="ΔV (m/s)"/>
