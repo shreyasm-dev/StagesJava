@@ -8,12 +8,12 @@
     <tabs>
       <Tab text="Single-stage">
         <content>
-          <fx:include source="single-stage.fxml"/>
+          <fx:include source="views/single-stage.fxml"/>
         </content>
       </Tab>
       <Tab text="Multi-stage">
         <content>
-          <fx:include source="multi-stage.fxml"/>
+          <fx:include source="views/multi-stage.fxml"/>
         </content>
       </Tab>
     </tabs>
