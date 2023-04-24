@@ -13,6 +13,7 @@ public class Providers {
     SPECIFIC_IMPULSE.put("Space Shuttle SRB", 242.0);
     SPECIFIC_IMPULSE.put("NSTAR", 3120.0);
     SPECIFIC_IMPULSE.put("NEXT", 4190.0);
-    SPECIFIC_IMPULSE.put("Merlin", 311.0);
+    SPECIFIC_IMPULSE.put("Merlin 1D", 311.0);
+    SPECIFIC_IMPULSE.put("Merlin 1C", 304.8);
   }
 }
