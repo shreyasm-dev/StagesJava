@@ -1,4 +1,4 @@
-package apcs.shreyas.stages;
+package apcs.shreyas.stages.controllers.views;
 
 import apcs.shreyas.stages.models.SingleStage;
 import apcs.shreyas.stages.models.Stage;
