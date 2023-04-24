@@ -3,6 +3,7 @@ package apcs.shreyas.stages.controllers.components;
 import javafx.beans.property.StringProperty;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import net.synedra.validatorfx.Validator;
@@ -13,6 +14,7 @@ public class ValidatedDoubleField extends VBox {
   private Label label;
   private TextField field;
   private Validator validator;
+  private ComboBox choices;
   private HashMap<String, Double> provider;
   private double min = 0;
   private boolean minInclusive = false;
@@ -32,7 +34,8 @@ public class ValidatedDoubleField extends VBox {
 
     fieldContainer.getChildren().add(this.field);
     if (provider != null) {
-      ComboBox choices = new ComboBox<>();
+      this.choices = new ComboBox();
+
       choices.setPromptText("Presets");
 
       // https://stackoverflow.com/questions/50569330/how-to-reset-combobox-and-display-prompttext
@@ -45,7 +48,9 @@ public class ValidatedDoubleField extends VBox {
 
       choices.getItems().addAll(provider.keySet().stream().sorted().toArray());
       choices.setOnAction(e -> {
-        this.field.setText(provider.get(choices.getValue()).toString());
+        String val = choices.getValue().toString();
+        this.field.setText(provider.get(val).toString());
+        this.field.fireEvent(new KeyEvent(KeyEvent.KEY_TYPED, "", "", null, false, false, false, false));
       });
       fieldContainer.getChildren().add(choices);
     }
@@ -79,6 +84,6 @@ public class ValidatedDoubleField extends VBox {
   }
 
   public void setEventHandler(EventHandler action) {
-    this.field.addEventHandler(javafx.scene.input.KeyEvent.KEY_RELEASED, action);
+    this.field.addEventHandler(KeyEvent.ANY, action);
   }
 }
