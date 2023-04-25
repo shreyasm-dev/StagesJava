@@ -1,6 +1,7 @@
 package apcs.shreyas.stages.controllers.components;
 
 import apcs.shreyas.stages.Providers;
+import apcs.shreyas.stages.models.Engine;
 import javafx.beans.property.StringProperty;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
@@ -17,11 +18,11 @@ public class ValidatedDoubleField extends VBox {
   private Validator validator;
   private MenuButton choices;
   private Label choiceLabel;
-  private HashMap<Providers.Engine, Double> provider;
+  private HashMap<Engine, Double> provider;
   private double min = 0;
   private boolean minInclusive = false;
 
-  public ValidatedDoubleField(String label, String value, Validator validator, HashMap<Providers.Engine, Double> provider) {
+  public ValidatedDoubleField(String label, String value, Validator validator, HashMap<Engine, Double> provider) {
     this.setSpacing(5);
 
     this.label = new Label(label);
@@ -48,11 +49,11 @@ public class ValidatedDoubleField extends VBox {
 
       // This creates a tree structure within the menu
       // Probably could be done a lot better
-      for (Providers.EngineType type : Providers.EngineType.values()) {
+      for (Engine.EngineType type : Engine.EngineType.values()) {
         Menu typeMenu = new Menu(type.toString());
-        for (Providers.EngineOperator operator : Providers.EngineOperator.values()) {
+        for (Engine.EngineOperator operator : Engine.EngineOperator.values()) {
           Menu operatorMenu = new Menu(operator.toString());
-          for (Providers.Engine engine : provider.keySet()) {
+          for (Engine engine : provider.keySet()) {
             if (engine.getType() == type && engine.getOperator() == operator) {
               MenuItem engineItem = new MenuItem(engine.toString());
               engineItem.setOnAction(e -> {
@@ -85,7 +86,7 @@ public class ValidatedDoubleField extends VBox {
     }).decorates(field).immediate();
   }
 
-  public ValidatedDoubleField(String label, String value, Validator validator, HashMap<Providers.Engine, Double> provider, double min, boolean minInclusive) {
+  public ValidatedDoubleField(String label, String value, Validator validator, HashMap<Engine, Double> provider, double min, boolean minInclusive) {
     this(label, value, validator, provider);
     this.min = min;
     this.minInclusive = minInclusive;
