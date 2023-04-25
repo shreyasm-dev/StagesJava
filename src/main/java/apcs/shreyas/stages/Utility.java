@@ -2,9 +2,10 @@ package apcs.shreyas.stages;
 
 import apcs.shreyas.stages.controllers.components.ValidatedDoubleField;
 import apcs.shreyas.stages.models.Stage;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import apcs.shreyas.stages.models.provider.Providable;
+import apcs.shreyas.stages.models.provider.ProviderGroup;
+import apcs.shreyas.stages.models.provider.ProviderItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import net.synedra.validatorfx.Validator;
@@ -87,5 +88,21 @@ public class Utility {
     stageBox.getChildren().add(structuralMass);
 
     return stageBox;
+  }
+
+  public static Menu providerGroupToMenu(String label, ProviderGroup<?> provider, Function<ProviderItem<?>, Void> callback) {
+    Menu menu = new Menu(label);
+
+    for (Providable<?> providable : provider.getItems()) {
+      if (providable instanceof ProviderGroup) {
+        menu.getItems().add(providerGroupToMenu(providable.getName(), (ProviderGroup<?>)providable, callback));
+      } else if (providable instanceof ProviderItem) {
+        MenuItem item = new MenuItem(providable.getName());
+        item.setOnAction(e -> callback.apply((ProviderItem)providable));
+        menu.getItems().add(item);
+      }
+    }
+
+    return menu;
   }
 }
