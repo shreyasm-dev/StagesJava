@@ -1,6 +1,5 @@
 package apcs.shreyas.stages.controllers.views;
 
-import apcs.shreyas.stages.Providers;
 import apcs.shreyas.stages.Utility;
 import apcs.shreyas.stages.controllers.components.ValidatedDoubleField;
 import apcs.shreyas.stages.models.MultiStage;
