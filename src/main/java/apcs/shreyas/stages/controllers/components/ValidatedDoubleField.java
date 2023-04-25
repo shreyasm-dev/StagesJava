@@ -15,6 +15,7 @@ public class ValidatedDoubleField extends VBox {
   private TextField field;
   private Validator validator;
   private ComboBox choices;
+  private Label choiceLabel;
   private HashMap<String, Double> provider;
   private double min = 0;
   private boolean minInclusive = false;
@@ -35,6 +36,11 @@ public class ValidatedDoubleField extends VBox {
     fieldContainer.getChildren().add(this.field);
     if (provider != null) {
       this.choices = new ComboBox();
+      this.choiceLabel = new Label("");
+
+      this.field.addEventHandler(KeyEvent.KEY_TYPED, e -> {
+        this.choiceLabel.setText("");
+      });
 
       choices.setPromptText("Presets");
 
@@ -51,8 +57,10 @@ public class ValidatedDoubleField extends VBox {
         String val = choices.getValue().toString();
         this.field.setText(provider.get(val).toString());
         this.field.fireEvent(new KeyEvent(KeyEvent.KEY_TYPED, "", "", null, false, false, false, false));
+        this.choiceLabel.setText(val);
       });
-      fieldContainer.getChildren().add(choices);
+
+      fieldContainer.getChildren().addAll(this.choices, this.choiceLabel);
     }
 
     this.getChildren().addAll(this.label, fieldContainer);
