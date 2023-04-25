@@ -35,6 +35,8 @@ public class ValidatedDoubleField extends VBox {
     fieldContainer.setSpacing(5);
 
     fieldContainer.getChildren().add(this.field);
+
+    // If a provider is provided, add a menu button to select from the presets
     if (provider != null) {
       this.choices = new MenuButton();
       this.choices.getItems().addAll(Utility.providerGroupToMenu("Presets", provider, e -> {
@@ -55,6 +57,7 @@ public class ValidatedDoubleField extends VBox {
 
     this.getChildren().addAll(this.label, fieldContainer);
 
+    // The validated part of the ValidatedDoubleField
     this.validator.createCheck().dependsOn(label, this.field.textProperty()).withMethod(c -> {
       try {
         double val = Double.parseDouble(c.get(label));

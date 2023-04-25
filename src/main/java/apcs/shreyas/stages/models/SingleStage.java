@@ -26,6 +26,7 @@ public class SingleStage extends Rocket {
     return this.stage.getFinalMass() + this.payloadMass;
   }
 
+  // Tsiolkovsky's rocket equation
   public double getDeltaV() {
     return this.stage.getExhaustVelocity() * Math.log(this.getInitialMass() / this.getFinalMass());
   }

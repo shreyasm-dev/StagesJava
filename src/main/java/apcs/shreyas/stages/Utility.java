@@ -31,6 +31,7 @@ public class Utility {
     return box;
   } */
 
+  // Convert a Stage to a JavaFX view
   public static VBox stageToFXView(Stage stage, int i, Validator validator, Function<Void, Void> removeCallback, Function<Void, Void> updateCallback) {
     VBox stageBox = new VBox();
 
@@ -90,6 +91,7 @@ public class Utility {
     return stageBox;
   }
 
+  // Convert a ProviderGroup to a JavaFX Menu to use in ValidatedDoubleField
   public static Menu providerGroupToMenu(String label, ProviderGroup<?> provider, Function<ProviderItem<?>, Void> callback) {
     Menu menu = new Menu(label);
 

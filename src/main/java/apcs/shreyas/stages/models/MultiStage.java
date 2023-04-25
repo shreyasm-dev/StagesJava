@@ -45,6 +45,7 @@ public class MultiStage extends Rocket {
     }
   }
 
+  // Tsiolkovsky's rocket equation, but taking into account that we lose mass when stages separate
   public double getDeltaV() {
     ArrayList<Stage> unusedStages = new ArrayList<>(this.stages);
     double deltaV = 0;
