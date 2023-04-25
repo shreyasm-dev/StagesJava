@@ -17,7 +17,6 @@ public class ValidatedDoubleField extends VBox {
   private TextField field;
   private Validator validator;
   private MenuButton choices;
-  private Label choiceLabel;
   private ProviderGroup<Double> provider;
   private double min = 0;
   private boolean minInclusive = false;
@@ -41,19 +40,17 @@ public class ValidatedDoubleField extends VBox {
       this.choices.getItems().addAll(Utility.providerGroupToMenu("Presets", provider, e -> {
         this.field.setText(e.getItem().toString());
         this.field.fireEvent(new KeyEvent(KeyEvent.KEY_TYPED, "", "", null, false, false, false, false));
-        this.choiceLabel.setText(e.getName());
+        this.choices.setText(e.getName());
         return null;
       }).getItems());
 
-      this.choiceLabel = new Label("");
-
       this.field.addEventHandler(KeyEvent.KEY_TYPED, e -> {
-        this.choiceLabel.setText("");
+        this.choices.setText("Presets");
       });
 
       this.choices.setText("Presets");
 
-      fieldContainer.getChildren().addAll(this.choices, this.choiceLabel);
+      fieldContainer.getChildren().add(this.choices);
     }
 
     this.getChildren().addAll(this.label, fieldContainer);
