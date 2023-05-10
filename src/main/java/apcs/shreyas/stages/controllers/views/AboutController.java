@@ -13,6 +13,22 @@ public class AboutController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    webView.getEngine().loadContent("is it finally working? maybe, maybe not");
+    // This took way too long to get working
+    webView.getEngine().loadContent("""
+        <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['$$', '$$']],
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+        </script>
+        <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+        <p>Example: $\\frac{1}{2}$</p>
+      """);
   }
 }

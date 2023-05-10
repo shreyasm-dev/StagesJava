@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a845a31a-ee24-40b4-8c9f-7c6ec05a38c6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/controllers/views/AboutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/controllers/views/AboutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/apcs/shreyas/stages/views/about.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/apcs/shreyas/stages/views/about.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683734309103</updated>
-      <workItem from="1683734310782" duration="2996000" />
+      <workItem from="1683734310782" duration="3635000" />
     </task>
     <servers />
   </component>
