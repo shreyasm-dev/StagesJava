@@ -54,7 +54,7 @@ public class AboutController implements Initializable {
             crossorigin='anonymous'
             onload='renderMathInElement(document.body, {delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}]});'
           ></script>
-          """ + this.text + """
+          """ + text + """
         </body>
        </html>
       """);
