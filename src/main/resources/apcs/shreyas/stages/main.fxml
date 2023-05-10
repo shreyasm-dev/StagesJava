@@ -16,6 +16,11 @@
           <fx:include source="views/multi-stage.fxml"/>
         </content>
       </Tab>
+      <Tab text="About">
+        <content>
+          <fx:include source="views/about.fxml"/>
+        </content>
+      </Tab>
     </tabs>
   </TabPane>
 </VBox>
