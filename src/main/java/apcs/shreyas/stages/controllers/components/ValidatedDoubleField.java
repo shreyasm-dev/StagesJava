@@ -37,9 +37,9 @@ public class ValidatedDoubleField extends VBox {
     fieldContainer.getChildren().add(this.field);
 
     // If a provider is provided, add a menu button to select from the presets
-    if (provider != null) {
+    if (this.provider != null) {
       this.choices = new MenuButton();
-      this.choices.getItems().addAll(Utility.providerGroupToMenu("Presets", provider, e -> {
+      this.choices.getItems().addAll(Utility.providerGroupToMenu("Presets", this.provider, e -> {
         this.field.setText(e.getItem().toString());
         this.field.fireEvent(new KeyEvent(KeyEvent.KEY_TYPED, "", "", null, false, false, false, false));
         this.choices.setText(e.getName());
