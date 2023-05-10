@@ -23,7 +23,7 @@
   <VBox fx:id="payloadMassRoot"/>
 
   <VBox spacing="5.0">
-    <Label text="ΔV (m/s)"/>
+    <Label text="Δv (m/s)"/>
     <Label fx:id="deltaV"/>
     <Label fx:id="singleStageDeltaV"/>
   </VBox>
