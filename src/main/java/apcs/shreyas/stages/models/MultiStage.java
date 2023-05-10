@@ -59,4 +59,14 @@ public class MultiStage extends Rocket {
 
     return deltaV;
   }
+
+  // Return this rocket as if it was a single stage rocket (for comparison purposes)
+  // It averages the specific impulse of all the stages, which is not ideal, but it's better than nothing
+  public SingleStage asSingleStage() {
+    double specificImpulse = this.stages.stream().mapToDouble(Stage::getSpecificImpulse).sum() / this.stages.size();
+    double propellantMass = this.stages.stream().mapToDouble(Stage::getPropellantMass).sum();
+    double structuralMass = this.stages.stream().mapToDouble(Stage::getStructuralMass).sum();
+
+    return new SingleStage(new Stage(specificImpulse, propellantMass, structuralMass), this.payloadMass);
+  }
 }

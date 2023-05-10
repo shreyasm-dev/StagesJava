@@ -26,6 +26,9 @@ public class MultiStageController implements Initializable {
   @FXML
   private Label deltaV;
 
+  @FXML
+  private Label singleStageDeltaV;
+
   private Validator validator;
 
   private MultiStage rocket;
@@ -99,6 +102,7 @@ public class MultiStageController implements Initializable {
   private void updateDeltaV() {
     if (validator.validate()) {
       this.deltaV.setText(String.valueOf(this.rocket.getDeltaV()));
+      this.singleStageDeltaV.setText("As a single stage: " + this.rocket.asSingleStage().getDeltaV());
     }
   }
 }

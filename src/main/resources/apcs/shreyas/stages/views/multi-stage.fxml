@@ -4,7 +4,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.Group?>
 <VBox spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="apcs.shreyas.stages.controllers.views.MultiStageController">
   <padding>
@@ -26,5 +25,6 @@
   <VBox spacing="5.0">
     <Label text="ΔV (m/s)"/>
     <Label fx:id="deltaV"/>
+    <Label fx:id="singleStageDeltaV"/>
   </VBox>
 </VBox>
