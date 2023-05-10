@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a845a31a-ee24-40b4-8c9f-7c6ec05a38c6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/controllers/views/MultiStageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/controllers/views/MultiStageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/MultiStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/MultiStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/apcs/shreyas/stages/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/apcs/shreyas/stages/main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/apcs/shreyas/stages/views/multi-stage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/apcs/shreyas/stages/views/multi-stage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +29,9 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2PbmliJQHYrDKjW97uSfNgk07Pr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,6 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/sm/IdeaProjects/AP CS 22-23/Stages/src/main/resources/apcs/shreyas/stages/views",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -47,6 +50,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/apcs/shreyas/stages/views" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="apcs.shreyas.stages.Application" />
@@ -64,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683734309103</updated>
-      <workItem from="1683734310782" duration="2044000" />
+      <workItem from="1683734310782" duration="2321000" />
     </task>
     <servers />
   </component>

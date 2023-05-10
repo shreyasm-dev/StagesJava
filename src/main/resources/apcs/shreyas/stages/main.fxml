@@ -5,22 +5,14 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
   <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
-    <tabs>
-      <Tab text="Single-stage">
-        <content>
-          <fx:include source="views/single-stage.fxml"/>
-        </content>
-      </Tab>
-      <Tab text="Multi-stage">
-        <content>
-          <fx:include source="views/multi-stage.fxml"/>
-        </content>
-      </Tab>
-      <Tab text="About">
-        <content>
-          <fx:include source="views/about.fxml"/>
-        </content>
-      </Tab>
-    </tabs>
+    <Tab text="Single-stage">
+      <fx:include source="views/single-stage.fxml"/>
+    </Tab>
+    <Tab text="Multi-stage">
+      <fx:include source="views/multi-stage.fxml"/>
+    </Tab>
+    <Tab text="About">
+      <fx:include source="views/about.fxml"/>
+    </Tab>
   </TabPane>
 </VBox>
