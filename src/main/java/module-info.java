@@ -1,6 +1,7 @@
 module apcs.shreyas.stages {
   requires javafx.controls;
   requires javafx.fxml;
+  requires javafx.web;
 
   requires net.synedra.validatorfx;
 
