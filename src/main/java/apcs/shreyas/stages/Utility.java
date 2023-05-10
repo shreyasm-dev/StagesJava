@@ -13,6 +13,7 @@ import net.synedra.validatorfx.Validator;
 import java.util.function.Function;
 
 public class Utility {
+  // Unused
   /* public static VBox labeledTextField(String label) {
     VBox box = new VBox();
     box.setSpacing(5);
@@ -40,12 +41,14 @@ public class Utility {
     Label stageLabel = new Label("Stage " + (i + 1));
     stageLabel.setStyle("-fx-font-size: 16px");
 
-    // Create a small icon to help distinguish stages easily
+    // Create a small icon to help distinguish stages easily when deleting
     // https://stackoverflow.com/questions/1961146/memory-address-of-variables-in-java
+    // Based on the hashCode of the stage, so it stays the same for the same Stage objects (easier to distinguish)
     Rectangle icon = new Rectangle(4, 16);
     icon.setStyle("-fx-fill: #" + Integer.toHexString(stage.hashCode()).substring(0, 6));
     stageLabel.setGraphic(icon);
 
+    // On click, call the passed callback to remove this stage from the list
     Button removeButton = new Button("Remove");
     removeButton.setOnAction(e -> removeCallback.apply(null));
 

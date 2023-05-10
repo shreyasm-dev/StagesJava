@@ -13,11 +13,11 @@ import net.synedra.validatorfx.Validator;
 import java.util.HashMap;
 
 public class ValidatedDoubleField extends VBox {
-  private Label label;
-  private TextField field;
-  private Validator validator;
+  private final Label label;
+  private final TextField field;
+  private final Validator validator;
   private MenuButton choices;
-  private ProviderGroup<Double> provider;
+  private final ProviderGroup<Double> provider;
   private double min = 0;
   private boolean minInclusive = false;
 
@@ -39,6 +39,8 @@ public class ValidatedDoubleField extends VBox {
     // If a provider is provided, add a menu button to select from the presets
     if (this.provider != null) {
       this.choices = new MenuButton();
+
+      // Add all the items from the provider to the menu button
       this.choices.getItems().addAll(Utility.providerGroupToMenu("Presets", this.provider, e -> {
         this.field.setText(e.getItem().toString());
         this.field.fireEvent(new KeyEvent(KeyEvent.KEY_TYPED, "", "", null, false, false, false, false));
@@ -46,10 +48,12 @@ public class ValidatedDoubleField extends VBox {
         return null;
       }).getItems());
 
+      // When the field is changed, reset the menu button text
       this.field.addEventHandler(KeyEvent.KEY_TYPED, e -> {
         this.choices.setText("Presets");
       });
 
+      // Set initial text
       this.choices.setText("Presets");
 
       fieldContainer.getChildren().add(this.choices);
@@ -57,7 +61,7 @@ public class ValidatedDoubleField extends VBox {
 
     this.getChildren().addAll(this.label, fieldContainer);
 
-    // The validated part of the ValidatedDoubleField
+    // The 'validated' part of the ValidatedDoubleField
     this.validator.createCheck().dependsOn(label, this.field.textProperty()).withMethod(c -> {
       try {
         double val = Double.parseDouble(c.get(label));
@@ -84,7 +88,7 @@ public class ValidatedDoubleField extends VBox {
     return this.field.textProperty();
   }
 
-  public void setEventHandler(EventHandler action) {
+  public void setEventHandler(EventHandler<? super KeyEvent> action) {
     this.field.addEventHandler(KeyEvent.ANY, action);
   }
 }

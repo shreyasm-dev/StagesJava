@@ -1,7 +1,7 @@
 package apcs.shreyas.stages.models.provider;
 
 public class ProviderItem<T> extends Providable<T> {
-  private T item;
+  private final T item;
 
   public ProviderItem(String name, T item) {
     super(name);

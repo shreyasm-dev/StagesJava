@@ -1,7 +1,7 @@
 package apcs.shreyas.stages.models.provider;
 
 public class ProviderGroup<T> extends Providable<T> {
-  private Providable<T>[] items;
+  private final Providable<T>[] items;
 
   public ProviderGroup(String name, Providable<T>[] items) {
     super(name);

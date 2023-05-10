@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a845a31a-ee24-40b4-8c9f-7c6ec05a38c6" name="Changes" comment="" />
+    <list default="true" id="a845a31a-ee24-40b4-8c9f-7c6ec05a38c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/controllers/components/ValidatedDoubleField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/controllers/components/ValidatedDoubleField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/SingleStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/SingleStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/provider/Providable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/provider/Providable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/provider/ProviderGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/provider/ProviderGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/provider/ProviderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apcs/shreyas/stages/models/provider/ProviderItem.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +28,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2PbmliJQHYrDKjW97uSfNgk07Pr" />
   <component name="ProjectViewState">
@@ -56,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683734309103</updated>
-      <workItem from="1683734310782" duration="371000" />
+      <workItem from="1683734310782" duration="1356000" />
     </task>
     <servers />
   </component>

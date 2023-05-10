@@ -1,7 +1,7 @@
 package apcs.shreyas.stages.models.provider;
 
 public abstract class Providable<T> {
-  private String name;
+  private final String name;
 
   public Providable(String name) {
     this.name = name;

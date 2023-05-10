@@ -46,6 +46,8 @@ public class MultiStage extends Rocket {
   }
 
   // Tsiolkovsky's rocket equation, but taking into account that we lose mass when stages separate
+  // For each stage, you can pretend that the rest of the rocket is the payload (because it's basically dead weight when not in use)
+  // Then, you can add all the deltaV's together
   public double getDeltaV() {
     ArrayList<Stage> unusedStages = new ArrayList<>(this.stages);
     double deltaV = 0;
