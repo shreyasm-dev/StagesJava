@@ -12,6 +12,7 @@ import net.synedra.validatorfx.Validator;
 
 import java.util.function.Function;
 
+// Random utilities sorted into a class (many are only used once, but it makes the code more readable and cleaner)
 public class Utility {
   // Unused
   /* public static VBox labeledTextField(String label) {
@@ -109,5 +110,60 @@ public class Utility {
     }
 
     return menu;
+  }
+
+  // Utility class for writing LaTeX-like things
+  public static class Tex {
+    public static String text(String text) {
+      return "\\(" + embeddedText(text) + "\\)";
+    }
+
+    public static String embeddedText(String text) {
+      return "\\text{" + text + "}";
+    }
+
+    public static String math(String math) {
+      return "\\(" + math + "\\)";
+    }
+
+    public static String displayMath(String math) {
+      return "\\[" + math + "\\]";
+    }
+
+    public static String fraction(String numerator, String denominator) {
+      return "\\frac{" + numerator + "}{" + denominator + "}";
+    }
+
+    public static String exp(String base, String exponent) {
+      return base + "^{" + exponent + "}";
+    }
+
+    public static String sub(String base, String subscript) {
+      return base + "_{" + subscript + "}";
+    }
+
+    public static String ln(String arg) {
+      return "\\ln{" + arg + "}";
+    }
+
+    public static String delta() {
+      return "\\Delta ";
+    }
+
+    // Didn't know Java had this variadic function syntax (I've used it in JS/Python before)
+    public static String list(String... items) {
+      // IntelliJ suggested using a StringBuilder instead of +=
+      StringBuilder result = new StringBuilder();
+
+      result.append("\\displaylines {\n");
+
+      for (String item : items) {
+        result.append(item).append("\\\\");
+      }
+
+      result.append("\n}");
+
+      return result.toString();
+    }
   }
 }
