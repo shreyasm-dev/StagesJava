@@ -102,10 +102,10 @@ public class Utility {
 
     for (Providable<?> providable : provider.getItems()) {
       if (providable instanceof ProviderGroup) {
-        menu.getItems().add(providerGroupToMenu(providable.getName(), (ProviderGroup<?>)providable, callback));
+        menu.getItems().add(providerGroupToMenu(providable.getName(), (ProviderGroup<?>) providable, callback));
       } else if (providable instanceof ProviderItem) {
         MenuItem item = new MenuItem(providable.getName());
-        item.setOnAction(e -> callback.apply((ProviderItem)providable));
+        item.setOnAction(e -> callback.apply((ProviderItem) providable));
         menu.getItems().add(item);
       }
     }
@@ -116,7 +116,14 @@ public class Utility {
   // Utility class for writing LaTeX-like things
   public static class Tex {
     public static String text(String text) {
-      return String.join(" ", Arrays.stream(text.split(" ")).map(s -> "\\(" + embeddedText(s) + "\\)").toArray(String[]::new));
+      // Kind of hacky, but it works (makes each word a separate LaTeX block, so it can break lines properly (MathJax is supposed to do this automatically, and does in my browser, but doesn't here for some reason))
+      return String.join(
+        " ",
+        Arrays
+          .stream(text.split(" "))
+          .map(s -> "\\(" + embeddedText(s) + "\\)")
+          .toArray(String[]::new)
+      );
     }
 
     public static String embeddedText(String text) {

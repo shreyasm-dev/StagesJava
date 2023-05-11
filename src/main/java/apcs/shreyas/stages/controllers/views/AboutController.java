@@ -31,7 +31,21 @@ public class AboutController implements Initializable {
           Utility.Tex.sub("m", "0") + "=" + Utility.Tex.embeddedText("initial mass (") + "kg" + Utility.Tex.embeddedText(")"),
           Utility.Tex.sub("m", "f") + "=" + Utility.Tex.embeddedText("final mass (") + "kg" + Utility.Tex.embeddedText(")")
         )
-      );
+      ) +
+      Utility.Tex.math("v_e") + Utility.Tex.text(" is the effective exhaust velocity, which is the speed of the rocket's exhaust as it leaves the rocket. It is calculated with the following equation:") +
+      Utility.Tex.displayMath("v_e=" +
+        Utility.Tex.sub("g", "0") +
+        Utility.Tex.sub("I", "sp")
+      ) +
+      Utility.Tex.text("where:") +
+      Utility.Tex.displayMath(
+        Utility.Tex.list(
+          Utility.Tex.sub("g", "0") + "=" + Utility.Tex.embeddedText("standard gravity (constant, approximately 9.81) (") + Utility.Tex.fraction("m", "s^2") + Utility.Tex.embeddedText(")"),
+          Utility.Tex.sub("I", "sp") + "=" + Utility.Tex.embeddedText("specific impulse (") + Utility.Tex.fraction("s", "s") + Utility.Tex.embeddedText(")")
+        )
+      ) +
+      Utility.Tex.math("I_{sp}") +
+      Utility.Tex.text(" is the specific impulse, which is a measure of the efficiency of the rocket's engine. It's more convenient to use this value than the raw exhaust velocity (even though it has nothing to do with impulse in physics).");
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
