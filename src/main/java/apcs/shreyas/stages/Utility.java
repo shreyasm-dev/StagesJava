@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import net.synedra.validatorfx.Validator;
 
+import java.util.Arrays;
 import java.util.function.Function;
 
 // Random utilities sorted into a class (many are only used once, but it makes the code more readable and cleaner)
@@ -115,7 +116,7 @@ public class Utility {
   // Utility class for writing LaTeX-like things
   public static class Tex {
     public static String text(String text) {
-      return "\\(" + embeddedText(text) + "\\)";
+      return String.join(" ", Arrays.stream(text.split(" ")).map(s -> "\\(" + embeddedText(s) + "\\)").toArray(String[]::new));
     }
 
     public static String embeddedText(String text) {
