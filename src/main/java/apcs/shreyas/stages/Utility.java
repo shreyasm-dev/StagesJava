@@ -116,14 +116,8 @@ public class Utility {
   // Utility class for writing LaTeX-like things
   public static class Tex {
     public static String text(String text) {
-      // Kind of hacky, but it works (makes each word a separate LaTeX block, so it can break lines properly (MathJax is supposed to do this automatically, and does in my browser, but doesn't here for some reason))
-      return String.join(
-        " ",
-        Arrays
-          .stream(text.split(" "))
-          .map(s -> "\\(" + embeddedText(s) + "\\)")
-          .toArray(String[]::new)
-      );
+      // This function is here in case I want to change the way text is formatted later (it originally was used and then I changed my mind)
+      return text;
     }
 
     public static String embeddedText(String text) {
