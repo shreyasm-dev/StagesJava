@@ -4,7 +4,6 @@ import apcs.shreyas.stages.models.provider.Providable;
 import apcs.shreyas.stages.models.provider.ProviderGroup;
 import apcs.shreyas.stages.models.provider.ProviderItem;
 
-// https://stackoverflow.com/questions/43906226/in-java-can-i-declare-a-hashmap-constant
 public class Providers {
   public static final ProviderGroup<Double> SPECIFIC_IMPULSE = new ProviderGroup<>(
     "Specific impulse",
