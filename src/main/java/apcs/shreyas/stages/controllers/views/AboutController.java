@@ -14,7 +14,7 @@ public class AboutController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    URL url = Application.class.getResource("about.html");
+    URL url = Application.class.getResource("about/about.html");
     webView.getEngine().load(url.toString());
   }
 }
