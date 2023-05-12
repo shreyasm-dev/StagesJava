@@ -1,8 +1,6 @@
 <div id='content'>
   <math-text>Tsiolkovsky's rocket equation (also called the Ideal Rocket Equation) states that:</math-text>
 
-  <br/><br/>
-
   <math xmlns='http://www.w3.org/1998/Math/MathML' display='block'>
     <mrow>
       <mi>&#x0394;</mi>
@@ -26,11 +24,7 @@
     </mrow>
   </math>
 
-  <br/><br/>
-
   <math-text>where</math-text>
-
-  <br/><br/>
 
   <ul>
     <li><inline-math><mi>v</mi></inline-math><math-text> is the change in velocity (</math-text><inline-math><mfrac><mi>m</mi><mi>s</mi></mfrac></inline-math><math-text>)</math-text></li>
@@ -39,11 +33,9 @@
     <li><inline-math><msub><mi>m</mi><mi>f</mi></msub></inline-math><math-text> is the final mass (</math-text><inline-math><mi>kg</mi></inline-math><math-text>)</math-text></li>
   </ul>
 
-  <br/><br/>
-
-  <inline-math><msub><mi>I</mi><mi>sp</mi></msub></inline-math><math-text> is a more convenient way to express the exhaust velocity, rather than the raw exhaust velocity.</math-text>
-
-  <br/><br/>
+  <span>
+    <inline-math><msub><mi>I</mi><mi>sp</mi></msub></inline-math><math-text> is a more convenient way to express the exhaust velocity, rather than the raw exhaust velocity.</math-text>
+  </span>
 
   <math xmlns='http://www.w3.org/1998/Math/MathML' display='block'>
     <mrow>
@@ -63,11 +55,7 @@
     </mrow>
   </math>
 
-  <br/><br/>
-
   <math-text>where</math-text>
-
-  <br/><br/>
 
   <ul>
     <li><inline-math><msub><mi>I</mi><mi>sp</mi></msub></inline-math><math-text> is the specific impulse (</math-text><inline-math><mi>s</mi></inline-math><math-text>)</math-text></li>
@@ -79,6 +67,11 @@
   #content {
     padding: 15px;
     line-height: 1.7;
+  }
+
+  #content > :not(:last-child) {
+    display: block;
+    margin-bottom: 20px;
   }
 </style>
 
