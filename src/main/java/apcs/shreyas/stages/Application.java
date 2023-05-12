@@ -11,7 +11,6 @@ import java.io.IOException;
 Other than JavaFX and core Java, this project uses the following libraries:
 
 - ValidatorFX
-- MathJax (for rendering LaTeX in a WebView, not used in the Java code)
 
 Code taken from Stack Overflow is commented in the code
 
