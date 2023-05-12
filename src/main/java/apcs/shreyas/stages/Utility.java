@@ -104,7 +104,7 @@ public class Utility {
       if (providable instanceof ProviderGroup) {
         menu.getItems().add(providerGroupToMenu(providable.getName(), (ProviderGroup<?>) providable, callback));
       } else if (providable instanceof ProviderItem) {
-        MenuItem item = new MenuItem(providable.getName());
+        MenuItem item = new MenuItem(providable.toString());
         item.setOnAction(e -> callback.apply((ProviderItem) providable));
         menu.getItems().add(item);
       }

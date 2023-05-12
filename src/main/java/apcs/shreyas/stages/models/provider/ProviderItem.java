@@ -11,4 +11,8 @@ public class ProviderItem<T> extends Providable<T> {
   public T getItem() {
     return item;
   }
+
+  public String toString() {
+    return this.getName() + " (" + this.getItem() + ")";
+  }
 }
