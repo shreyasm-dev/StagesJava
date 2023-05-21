@@ -79,4 +79,18 @@ public class Providers {
       )
     }
   );
+
+  public static final ProviderGroup<Double> PAYLOAD_MASS = new ProviderGroup<>(
+    "Payload mass",
+    new Providable[]{
+      new ProviderGroup(
+        "Apollo CSM",
+        new Providable[]{
+          new ProviderItem("Apollo CSM (fueled, Lunar orbit)", 28800.0),
+          new ProviderItem("Apollo CSM (fueled, Earth orbit)", 14690.0),
+          new ProviderItem("Apollo CSM (dry)", 11900.0),
+        }
+      ),
+    }
+  );
 }

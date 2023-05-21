@@ -39,7 +39,7 @@ public class SingleStageController implements Initializable {
     this.specificImpulse = new ValidatedDoubleField("Specific impulse (s)", "450.0", this.validator, Providers.SPECIFIC_IMPULSE);
     this.propellantMass = new ValidatedDoubleField("Propellant mass (kg)", "100000.0", this.validator, null);
     this.structuralMass = new ValidatedDoubleField("Structural mass (kg)", "10000.0", this.validator, Providers.STRUCTURAL_MASS);
-    this.payloadMass = new ValidatedDoubleField("Payload mass (kg)", "5000.0", this.validator, null, 0, true);
+    this.payloadMass = new ValidatedDoubleField("Payload mass (kg)", "5000.0", this.validator, Providers.PAYLOAD_MASS, 0, true);
 
     this.specificImpulse.setEventHandler(e -> this.valueChanged());
     this.propellantMass.setEventHandler(e -> this.valueChanged());
