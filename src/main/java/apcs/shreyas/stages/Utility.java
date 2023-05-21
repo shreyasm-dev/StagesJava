@@ -80,7 +80,7 @@ public class Utility {
       "Structural mass (kg)",
       String.valueOf(stage.getStructuralMass()),
       validator,
-      null
+      Providers.STRUCTURAL_MASS
     );
     structuralMass.textProperty().addListener((observable, oldValue, newValue) -> {
       stage.setStructuralMass(Double.parseDouble(newValue));

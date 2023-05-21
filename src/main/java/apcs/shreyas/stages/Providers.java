@@ -59,4 +59,24 @@ public class Providers {
       )
     }
   );
+
+  public static final ProviderGroup<Double> STRUCTURAL_MASS = new ProviderGroup<>(
+    "Structural mass",
+    new Providable[]{
+      new ProviderGroup(
+        "NASA",
+        new Providable[]{
+          new ProviderGroup(
+            "Saturn V",
+            new Providable[]{
+              new ProviderItem("Saturn V", 187566.0),
+              new ProviderItem("Saturn V Stage 1 (S-IC)", 135218.0),
+              new ProviderItem("Saturn V Stage 2 (S-II)", 39048.0),
+              new ProviderItem("Saturn V Stage 3 (S-IVB)", 13300.0),
+            }
+          )
+        }
+      )
+    }
+  );
 }
