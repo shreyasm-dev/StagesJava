@@ -14,22 +14,22 @@ public class Providers {
           new ProviderGroup(
             "NASA",
             new Providable[]{
-              new ProviderItem("RS-25", 452.3),
-              new ProviderItem("F-1", 304.0)
+              new ProviderItem<>("RS-25", 452.3),
+              new ProviderItem<>("F-1", 304.0)
             }
           ),
           new ProviderGroup(
             "SpaceX",
             new Providable[]{
-              new ProviderItem("Raptor", 363.0),
-              new ProviderItem("Merlin 1D", 311.0),
-              new ProviderItem("Merlin 1C", 304.8)
+              new ProviderItem<>("Raptor", 363.0),
+              new ProviderItem<>("Merlin 1D", 311.0),
+              new ProviderItem<>("Merlin 1C", 304.8)
             }
           ),
           new ProviderGroup(
             "Roscosmos",
             new Providable[]{
-              new ProviderItem("RD-180", 338.0)
+              new ProviderItem<>("RD-180", 338.0)
             }
           )
         }
@@ -40,7 +40,7 @@ public class Providers {
           new ProviderGroup(
             "NASA",
             new Providable[]{
-              new ProviderItem("Space Shuttle SRB", 242.0)
+              new ProviderItem<>("Space Shuttle SRB", 242.0)
             }
           )
         }
@@ -51,8 +51,8 @@ public class Providers {
           new ProviderGroup(
             "NASA",
             new Providable[]{
-              new ProviderItem("NSTAR", 3120.0),
-              new ProviderItem("NEXT", 4190.0)
+              new ProviderItem<>("NSTAR", 3120.0),
+              new ProviderItem<>("NEXT", 4190.0)
             }
           )
         }
@@ -69,10 +69,10 @@ public class Providers {
           new ProviderGroup(
             "Saturn V",
             new Providable[]{
-              new ProviderItem("Saturn V", 187566.0),
-              new ProviderItem("Saturn V Stage 1 (S-IC)", 135218.0),
-              new ProviderItem("Saturn V Stage 2 (S-II)", 39048.0),
-              new ProviderItem("Saturn V Stage 3 (S-IVB)", 13300.0),
+              new ProviderItem<>("Saturn V", 187566.0),
+              new ProviderItem<>("Saturn V Stage 1 (S-IC)", 135218.0),
+              new ProviderItem<>("Saturn V Stage 2 (S-II)", 39048.0),
+              new ProviderItem<>("Saturn V Stage 3 (S-IVB)", 13300.0),
             }
           )
         }
@@ -86,9 +86,9 @@ public class Providers {
       new ProviderGroup(
         "Apollo CSM",
         new Providable[]{
-          new ProviderItem("Apollo CSM (fueled, Lunar orbit)", 28800.0),
-          new ProviderItem("Apollo CSM (fueled, Earth orbit)", 14690.0),
-          new ProviderItem("Apollo CSM (dry)", 11900.0),
+          new ProviderItem<>("Apollo CSM (fueled, Lunar orbit)", 28800.0),
+          new ProviderItem<>("Apollo CSM (fueled, Earth orbit)", 14690.0),
+          new ProviderItem<>("Apollo CSM (dry)", 11900.0),
         }
       ),
     }

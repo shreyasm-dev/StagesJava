@@ -10,13 +10,13 @@ import java.io.IOException;
 
 Other than JavaFX and core Java, this project uses the following libraries:
 
-- ValidatorFX
+- ValidatorFX - https://github.com/effad/ValidatorFX
 
 The following JavaScript libraries are used:
 
-- TeXZilla, for converting LaTeX to MathML (TeXZilla does conversion, and the JavaFX WebView handles rendering)
+- TeXZilla, for converting LaTeX to MathML (TeXZilla does conversion, and the JavaFX WebView handles rendering) - https://github.com/fred-wang/TeXZilla
 
-Code taken from Stack Overflow is commented in the code
+Code taken from Stack Overflow is commented in the code itself
 
  */
 
