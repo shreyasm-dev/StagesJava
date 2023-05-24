@@ -12,6 +12,10 @@ Other than JavaFX and core Java, this project uses the following libraries:
 
 - ValidatorFX
 
+The following JavaScript libraries are used:
+
+- TeXZilla, for converting LaTeX to MathML (TeXZilla does conversion, and the JavaFX WebView handles rendering)
+
 Code taken from Stack Overflow is commented in the code
 
  */

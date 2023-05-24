@@ -1,99 +1,62 @@
-<div id='content'>
-  <math-text>Tsiolkovsky's rocket equation (also called the Ideal Rocket Equation) states that:</math-text>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' href='style.css'>
+    <script src='TeXZilla-min.js'></script>
+    <script src='customElement.js'></script>
+  </head>
+  <body>
+    <div id='content'>
+      <span>Tsiolkovsky's rocket equation (also called the Ideal Rocket Equation) states that:</span>
 
-  <math xmlns='http://www.w3.org/1998/Math/MathML' display='block'>
-    <mrow>
-      <mi>&#x0394;</mi>
-      <mi>v</mi>
-      <mo>=</mo>
-      <msub>
-        <mi>v</mi>
-        <mi>e</mi>
-      </msub>
-      <mo>ln</mo>
-      <mfrac>
-        <msub>
-          <mi>m</mi>
-          <mn>0</mn>
-        </msub>
-        <msub>
-          <mi>m</mi>
-          <mi>f</mi>
-        </msub>
-      </mfrac>
-    </mrow>
-  </math>
+      <la-tex display='block'>{\Delta}v=v_e\ln{\frac{m_0}{m_f}}</la-tex>
 
-  <math-text>where</math-text>
+      <span>where</span>
 
-  <ul>
-    <li><inline-math><mi>v</mi></inline-math><math-text> is the change in velocity (</math-text><inline-math><mfrac><mi>m</mi><mi>s</mi></mfrac></inline-math><math-text>)</math-text></li>
-    <li><inline-math><msub><mi>v</mi><mi>e</mi></msub></inline-math><math-text> is the exhaust velocity (</math-text><inline-math><mfrac><mi>m</mi><mi>s</mi></mfrac></inline-math><math-text>)</math-text></li>
-    <li><inline-math><msub><mi>m</mi><mn>0</mn></msub></inline-math><math-text> is the initial mass (</math-text><inline-math><mi>kg</mi></inline-math><math-text>)</math-text></li>
-    <li><inline-math><msub><mi>m</mi><mi>f</mi></msub></inline-math><math-text> is the final mass (</math-text><inline-math><mi>kg</mi></inline-math><math-text>)</math-text></li>
-  </ul>
+      <ul>
+        <li><la-tex>{\Delta}v</la-tex> is the change in velocity (<la-tex>\frac{m}{s}</la-tex>)</li>
+        <li><la-tex>v_e</la-tex> is the exhaust velocity (<la-tex>\frac{m}{s}</la-tex>)</li>
+        <li><la-tex>m_0</la-tex> is the initial mass (<la-tex>kg</la-tex>)</li>
+        <li><la-tex>m_f</la-tex> is the final mass (<la-tex>kg</la-tex>)</li>
+      </ul>
 
-  <math-text>This is equation can also be extended to multiple stages by considering the final mass of a stage to include itself (now without propellant) and the stages above it, and the initial mass of a stage to include just itself and everything else above it.</math-text>
+      <span>This is equation can also be extended to multiple stages by considering the final mass of a stage to include itself (now without propellant) and the stages above it, and the initial mass of a stage to include just itself and everything else above it.</span>
 
-  <span>
-    <inline-math><msub><mi>I</mi><mi>sp</mi></msub></inline-math><math-text> is a more convenient way to express the exhaust velocity, rather than the raw exhaust velocity.</math-text>
-  </span>
+      <span>
+        <la-tex>I_{sp}</la-tex> is a more convenient way to express the exhaust velocity, rather than the raw exhaust velocity.
+      </span>
 
-  <math xmlns='http://www.w3.org/1998/Math/MathML' display='block'>
-    <mrow>
-      <msub>
-        <mi>v</mi>
-        <mi>e</mi>
-      </msub>
-      <mo>=</mo>
-      <msub>
-        <mi>I</mi>
-        <mi>sp</mi>
-      </msub>
-      <msub>
-        <mi>g</mi>
-        <mi>0</mi>
-      </msub>
-    </mrow>
-  </math>
+      <la-tex display='block'>v_e=I_{sp}g_0</la-tex>
 
-  <math-text>where</math-text>
+      <span>where</span>
 
-  <ul>
-    <li><inline-math><msub><mi>I</mi><mi>sp</mi></msub></inline-math><math-text> is the specific impulse (</math-text><inline-math><mi>s</mi></inline-math><math-text>)</math-text></li>
-    <li><inline-math><msub><mi>g</mi><mn>0</mn></msub></inline-math><math-text> is the standard gravity (constant, approximately </math-text><inline-math><mn>9.81</mn></inline-math><math-text>) (</math-text><inline-math><mfrac><mi>m</mi><msup><mi>s</mi><mn>2</mn></msup></mfrac></inline-math><math-text>)</math-text></li>
-  </ul>
+      <ul>
+        <li><la-tex>I_{sp}</la-tex> is the specific impulse (<la-tex>s</la-tex>)</li>
+        <li><la-tex>g_0</la-tex> is the standard gravity (constant, approximately <la-tex>9.81</la-tex>) (<la-tex>\frac{m}{s^2}</la-tex>)</li>
+      </ul>
 
-  <math-text>Some engines, such as the NEXT (NASA's Evolutionary Xenon Thruster) electric propulsion engine, have very high specific impulses. This is due to the fact that they produce more thrust per unit of fuel, but do not necessarily produce a lot of thrust, i.e. they do it over a long period of time. An F-1 (7.77 meganewtons) produces about 32.78 million times more thrust than a NEXT engine (237 millinewtons), but the NEXT's specific impulse is about 13.7 times that of the RS-25's. Specific impulse is more a measure of efficiency than raw power or thrust. This is why it is important to note that Tsiolkovsky's rocket equation only works in free space - you cannot apply it to situations with external forces like gravity, such as Earth. The equation also says absolutely nothing about time, i.e. you could have an engine with an extremely high specific impulse that takes a very, very long time to reach max delta v due to low thrust.</math-text>
-</div>
+      <span>Some engines, such as the NEXT (NASA's Evolutionary Xenon Thruster) electric propulsion engine, have very high specific impulses. This is due to the fact that they produce more thrust per unit of fuel, but do not necessarily produce a lot of thrust, i.e. they do it over a long period of time. An F-1 (<la-tex>7.77</la-tex> meganewtons) produces about <la-tex>32.78</la-tex> million times more thrust than a NEXT engine (<la-tex>237</la-tex> millinewtons), but the NEXT's specific impulse is about <la-tex>13.7</la-tex> times that of the RS-25's. Specific impulse is more a measure of efficiency than raw power or thrust. This is why it is important to note that Tsiolkovsky's rocket equation only works in free space - you cannot apply it to situations with external forces like gravity, such as Earth. The equation also says absolutely nothing about time, i.e. you could have an engine with an extremely high specific impulse that takes a very, very long time to reach max <la-tex>{\Delta}v</la-tex> due to low thrust.</span>
+    </div>
 
-<style>
-  #content {
-    padding: 15px;
-    line-height: 1.7;
-  }
+    <!-- Define some utility custom elements -->
+    <script>
+      class MathText extends HTMLElement {
+        connectedCallback() {
+          // Splitting and recombining makes sure it can break if needed
+          this.innerHTML = this.textContent.split(' ').map((s) => `<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><mrow><mtext>${s}</mtext></mrow></math>`).join(' ');
+        }
+      }
 
-  #content > :not(:last-child) {
-    display: block;
-    margin-bottom: 20px;
-  }
-</style>
+      class InlineMath extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = `<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><mrow>${this.innerHTML}</mrow></math>`;
+        }
+      }
 
-<!-- Define some utility custom elements -->
-<script>
-  class MathText extends HTMLElement {
-    connectedCallback() {
-      // Splitting and recombining makes sure it can break if needed
-      this.innerHTML = this.textContent.split(' ').map((s) => `<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><mrow><mtext>${s}</mtext></mrow></math>`).join(' ');
-    }
-  }
-
-  class InlineMath extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><mrow>${this.innerHTML}</mrow></math>`;
-    }
-  }
-
-  customElements.define('math-text', MathText);
-  customElements.define('inline-math', InlineMath);
-</script>
+      customElements.define('math-text', MathText);
+      customElements.define('inline-math', InlineMath);
+    </script>
+  </body>
+</html>
