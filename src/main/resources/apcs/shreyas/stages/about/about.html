@@ -39,24 +39,5 @@
 
       <span>Some engines, such as the NEXT (NASA's Evolutionary Xenon Thruster) electric propulsion engine, have very high specific impulses. This is due to the fact that they produce more thrust per unit of fuel, but do not necessarily produce a lot of thrust, i.e. they do it over a long period of time. An F-1 (<la-tex>7.77</la-tex> meganewtons) produces about <la-tex>32.78</la-tex> million times more thrust than a NEXT engine (<la-tex>237</la-tex> millinewtons), but the NEXT's specific impulse is about <la-tex>13.7</la-tex> times that of the RS-25's. Specific impulse is more a measure of efficiency than raw power or thrust. This is why it is important to note that Tsiolkovsky's rocket equation only works in free space - you cannot apply it to situations with external forces like gravity, such as Earth. The equation also says absolutely nothing about time, i.e. you could have an engine with an extremely high specific impulse that takes a very, very long time to reach max <la-tex>{\Delta}v</la-tex> due to low thrust.</span>
     </div>
-
-    <!-- Define some utility custom elements -->
-    <script>
-      class MathText extends HTMLElement {
-        connectedCallback() {
-          // Splitting and recombining makes sure it can break if needed
-          this.innerHTML = this.textContent.split(' ').map((s) => `<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><mrow><mtext>${s}</mtext></mrow></math>`).join(' ');
-        }
-      }
-
-      class InlineMath extends HTMLElement {
-        connectedCallback() {
-          this.innerHTML = `<math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><mrow>${this.innerHTML}</mrow></math>`;
-        }
-      }
-
-      customElements.define('math-text', MathText);
-      customElements.define('inline-math', InlineMath);
-    </script>
   </body>
 </html>
