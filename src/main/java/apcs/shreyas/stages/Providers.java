@@ -91,6 +91,26 @@ public class Providers {
           new ProviderItem<>("Apollo CSM (dry)", 11900.0),
         }
       ),
+      new ProviderGroup(
+        "Orion MPCV",
+        new Providable[]{
+          new ProviderItem<>("Orion MPCV (fueled, with LAS)", 33446.0),
+          new ProviderGroup(
+            "CM",
+            new Providable[]{
+              new ProviderItem<>("Orion MPCV CM (fueled)", 10400.0),
+              new ProviderItem<>("Orion MPCV CM (dry)", 9300.0),
+            }
+          ),
+          new ProviderGroup(
+            "ESM",
+            new Providable[]{
+              new ProviderItem<>("Orion MPCV ESM (fueled)", 15461.0),
+              new ProviderItem<>("Orion MPCV ESM (dry)", 6185.0),
+            }
+          ),
+        }
+      )
     }
   );
 }
